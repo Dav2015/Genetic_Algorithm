@@ -8,6 +8,7 @@ Created on Tue Nov 27 13:25:57 2018
 
 
 class Selection(object):
+    '''Interface of Selection to enforce implementation'''
          
     def execute(self):
         abstract

@@ -9,6 +9,7 @@ import numpy as np
 from selection import Selection
 
 class Tournament(Selection):
+    '''Type of Selection'''
 
     def execute(self,popClass):
         newPopClass = self.makeTournament(popClass)

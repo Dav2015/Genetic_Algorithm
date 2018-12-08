@@ -15,12 +15,14 @@ class Population(object):
     self.population = np.zeros((self.numChromosomes,self.numGenes)).astype(int)
 
   def populate(self):
+      ''''Start the population randomly'''
       for row in range(self.numChromosomes):
           for col in range(self.numGenes):
               genePos = np.random.randint(0,self.numGenes)
               self.population[row][col] = genePos
 
   def representChromosome(self,chromosome):
+      ''''Implement!'''
       abstract
 
   def setPopulation(self,population):

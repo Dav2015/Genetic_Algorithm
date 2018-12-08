@@ -15,6 +15,7 @@ class Mutation(Recomendation):
         return newPopClass
 
     def __mutation(self,popClass):
+        '''choose a gene and  mutate randomly'''
         for chro in range(popClass.numChromosomes):
             if self.probUse > np.random.rand():
                 randomGen = np.random.randint(0,popClass.numGenes)

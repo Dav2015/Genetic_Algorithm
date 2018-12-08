@@ -10,9 +10,9 @@ sys.path.append("/heuristic_calculation")
 sys.path.append("/population")
 
 class GeneticAlgh(object):
+    '''Main Class!'''
 
     def __init__(self,maxIterations,popClass,evaluClass,selection,crossover,mutation):
-#    def __init__(self,population,evaluation,selection):
         self.maxIterations = maxIterations
         self.popClass = popClass
         self.evalu = evaluClass
@@ -21,6 +21,10 @@ class GeneticAlgh(object):
         self.mut = mutation
 
     def execute(self):
+        '''
+        See the image in github in the same folder as this file
+        while we dont have a result continue to select crossover and mutate
+        '''
         self.randomPopulate()
         result = self.evaluation()
         result = False
@@ -34,23 +38,26 @@ class GeneticAlgh(object):
         return self.solution(self.evalu.fittiest.getFitiest())
 
     def solution(self,chromosome):
+        '''Put the solution in a visualization mode'''
         return self.popClass.representChromosome(chromosome)
 
     def randomPopulate(self):
+        '''populate randomly'''
         self.popClass.populate()
 
     def evaluation(self):
-#        heuristic here
+        '''output the from the heuristic test'''
         result = self.evalu.heuristic(self.popClass)
-#        print("")
-#        print("evaluation",evaluationResults,result)
         return result
 
     def selection(self):
+        '''make selection'''
         self.select.execute(self.popClass)
 
     def crossover(self):
+        '''make crossover'''
         self.cross.execute(self.popClass)
 
     def mutation(self):
+        '''make mutation'''
         self.mut.execute(self.popClass)
