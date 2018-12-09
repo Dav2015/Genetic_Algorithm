@@ -12,7 +12,7 @@ class Evaluation(object):
     '''
     
     def heuristic(self,pop):
-        ''''Needs to return a boolena''''
+        ''''Needs to return a bool''''
         abstract
     
            
