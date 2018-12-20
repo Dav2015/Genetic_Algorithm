@@ -16,6 +16,7 @@ from GeneticAlgh.geneticAlghMain import GeneticAlgh
 from KeenProblem.evaluation.keenEvaluation import KeenEvaluation
 from KeenProblem.keenPop.keenPop import KeenPop
 
+"Fork and RUN"
 pop = KeenPop(50,6)
 pop.populate()
 selection = Tournament()
